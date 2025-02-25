@@ -18,9 +18,9 @@ There are 2 main situations where this may happen:
 
 If a transaction has operations with multiple source accounts, it will require the source account signature for each operation.
 
-One case this happens is with specialized transactions such as Sponsored Reserves where a sponsoring account agrees to pay the base reserves for a sponsored account.
+One case where this happens is with specialized transactions such as [Sponsored Reserves](../../encyclopedia/transactions-specialized/sponsored-reserves) where a sponsoring account agrees to pay the base reserves for a sponsored account.
 
-In this example, there are 2 sponsoring accounts, S1 and S2, that sponsor trustlines for Account A.
+In this example, there are 2 sponsoring accounts, `S1` and `S2`, that sponsor trustlines for Account `A`.
 
 ```ts
 //
@@ -59,12 +59,12 @@ let tx = new TransactionBuilder(aAccount, { fee: BASE_FEE })
   .setTimeout(180)
   .build();
 
-// Note that all 3 accounts must approve/sign this transaction.
+// All 3 accounts must approve/sign this transaction.
 tx.sign(S1, S2, A);
 let txResponse = await server.submitTransaction(tx);
 ```
 
-Learn more about [Sponsored Reserves here](../..//encyclopedia/transactions-specialized/sponsored-reserves).
+Learn more about [Sponsored Reserves here](../../encyclopedia/transactions-specialized/sponsored-reserves).
 
 ## Operations with a High Threshold Weight
 
